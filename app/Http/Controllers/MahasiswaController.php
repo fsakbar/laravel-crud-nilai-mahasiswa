@@ -45,6 +45,25 @@ class MahasiswaController extends Controller
         return view ('mahasiswa.profile', ['mahasiswa'=> $mahasiswa, 'mata_kuliah' => $mata_kuliah]);
     }
 
+
+    // public function profileedit($id){
+    //     $mahasiswa = \App\Models\Mahasiswa::find($id);
+    //     // $mahasiswa->matkul()->updateExistingPivot($request)
+    //     $mata_kuliah = \App\Models\Matkul::all();
+
+    //     return view ('mahasiswa.profileedit', ['mahasiswa'=> $mahasiswa, 'mata_kuliah' => $mata_kuliah]);
+    // }
+
+    // public function profileupdate(){
+
+    // }
+
+    // public function profiledelete($id_mahasiswa, $id_matkul){
+    //     $mahasiswa = \App\Models\Mahasiswa::find($id_mahasiswa);
+    //     $mahasiswa -> matkul()->detach($id_matkul);
+    //     return redirect()->back()->with('success', 'Data Nilai Berhasil Dihapus');
+    // }
+
     public function addnilai(Request $request, $id_mahasiswa){
         // dd($request->all());
         $mahasiswa = \App\Models\Mahasiswa::find($id_mahasiswa);

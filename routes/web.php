@@ -19,7 +19,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('auths.login');
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -36,7 +36,12 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
     Route::post('/mahasiswa/{id}/update', [MahasiswaController::class, 'update'])->name('mahasiswa.edit');
     Route::get('/mahasiswa/{id}/delete', [MahasiswaController::class, 'delete'])->name('mahasiswa.delete');
+
     Route::get('/mahasiswa/{id}/profile', [MahasiswaController::class, 'profile']);
+    Route::get('/mahasiswa/{id}/profile/edit', [MahasiswaController::class, 'profileedit'])->name('mahasiswa.profileedit');
+    Route::post('/mahasiswa/{id}/profile/update', [MahasiswaController::class, 'profileupdate'])->name('mahasiswa.profileupdate');
+    Route::get('/mahasiswa/{id}/profile/delete', [MahasiswaController::class, 'profiledelete'])->name('mahasiswa.profiledelete');
+
     Route::post('/mahasiswa/{id}/addnilai', [MahasiswaController::class, 'addnilai']);
 
 

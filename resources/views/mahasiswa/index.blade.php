@@ -17,7 +17,7 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>NIM</th>
+                                            <th>Nilai</th>
                                             <th>Nama</th>
                                             <th>Program Studi</th>
                                             <th>No HP</th>

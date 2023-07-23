@@ -1,7 +1,13 @@
 @extends('layouts.master')
 
-@section('content')
 
+@section('header')
+<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+@stop
+
+
+
+@section('content')
 <div class="profile-detail">
     <div class="profile-info">
         <h4 class="heading">Detail Data Diri Mahasiswa</h4>
@@ -53,11 +59,13 @@
                         <p>E</p>
                     @endif
                 </td>
+                <td>
+                    <a href="/mahasiswa/{{$mahasiswa->id}}/profile/edit" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/mahasiswa/{{$mahasiswa->id}}/profile/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Mau Dihapus?')">Delete</a>
+                </td>
 
             </tr>
             @endforeach
-
-
         </table>
     </div>
 </div>
@@ -87,18 +95,14 @@
                      <label for="exampleInputEmail1" class="form-label">Nilai</label>
                      <input name="nilai" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{old('nilai')}}">
                 </div>
-
-
-
             </div>
          <div class="modal-footer">
-
          <button type="submit" class="btn btn-primary">Simpan</button>
          </form>
         </div>
-
-
     </div>
-  </div>
-
+</div>
 @stop
+
+
+
