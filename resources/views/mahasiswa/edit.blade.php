@@ -2,40 +2,44 @@
 
 @section('content')
     @if (session('success'))
-            <div class="alert alert-success" role="alert">
-            {{session('success')}}
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
         </div>
     @endif
 
     <div class="row">
         <h1>Edit Data Siswa</h1>
         <div class="col-lg-12">
-        <form action="/mahasiswa/{{$mahasiswa->id}}/update" method="POST">
-            @csrf
-             <div class="mb-3">
-               <label for="exampleInputEmail1" class="form-label">NIM</label>
-               <input name="nim" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$mahasiswa->nim}}">
-             </div>
-             <div class="mb-3">
-                 <label for="exampleInputEmail1" class="form-label">Nama</label>
-                 <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$mahasiswa->nama}}">
-               </div>
-               <div class="mb-3">
-                 <label for="exampleInputEmail1" class="form-label">Program Studi</label>
-                 <input name="program_studi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$mahasiswa->program_studi}}">
-               </div>
-               <div class="mb-3">
-                 <label  for="exampleInputEmail1" class="form-label">No HP</label>
-                 <input name="no_hp" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$mahasiswa->no_hp}}">
-               </div>
+            <form action="/mahasiswa/{{ $mahasiswa->id }}/update" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">NIM</label>
+                    <input name="nim" type="text" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" value="{{ $mahasiswa->nim }}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nama</label>
+                    <input name="nama" type="text" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" value="{{ $mahasiswa->nama }}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Program Studi</label>
+                    <input name="program_studi" type="text" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" value="{{ $mahasiswa->program_studi }}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">No HP</label>
+                    <input name="no_hp" type="text" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" value="{{ $mahasiswa->no_hp }}">
+                </div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                 <button type="submit" class="btn btn-warning">Update</button>
-            </div>
-     </form>
+        </div>
+        </form>
     </div>
-</div>
+    </div>
 
- {{-- <!-- Modal -->
+    {{-- <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
     <div class="modal-content">
@@ -72,5 +76,4 @@
         </div>
     </div>
     </div> --}}
-
-    @endsection
+@endsection

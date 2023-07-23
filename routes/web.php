@@ -27,7 +27,7 @@ Route::post('/postlogin', [AuthController::class, 'postlogin']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dasboard', [DashboardController::class, 'index']);
 
